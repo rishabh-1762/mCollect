@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PlaywrightSuite">
+    <!-- 🔥 THIS REGISTERS YOUR LISTENER -->
+    <listeners>
+        <listener class-name="utilities.ExtentListener"/>
+    </listeners>
+
+    <test name="RegressionTests">
+        <classes>
+            <!-- UPDATE with YOUR test class full path -->
+            <!--<class name="tests.LoginTest"/> -->
+            <class name="tests.AllocationText"/>
+            <!-- Add more test classes here -->
+        </classes>
+    </test>
+</suite>
