@@ -11,8 +11,6 @@ import utilities.TestDataProvider;
 
 public class APACselectionTest extends BaseTestClass {
 
-    private LoginPage loginPage;
-    private Filter filter;
 
     @Test(dataProvider = "loginData", dataProviderClass = TestDataProvider.class)
     public void testCasesMasterNavigation(String userName, String password, String menu, String subMenu, String vertical) {

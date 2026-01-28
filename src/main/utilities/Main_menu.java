@@ -45,7 +45,7 @@ public class Main_menu {
 
             // 5. Wait for navigation to complete
             page.waitForLoadState();
-            System.out.println("✅ Successfully navigated to: " + menu + " -> " + sub);
+            System.out.println("Successfully navigated to: " + menu + " -> " + sub);
 
         } catch (Exception e) {
             System.err.println("Failed to navigate to: " + menu + " -> " + sub);
@@ -76,7 +76,7 @@ public class Main_menu {
         }
     }
 
-    // 🆕 Helper method to check if menu is already expanded
+    //  Helper method to check if menu is already expanded
     public boolean isMenuExpanded(String menu) {
         String xpath = "//span[text()='" + menu + "']/ancestor::div[contains(@class,'jmix-sidemenu-item-header')]" +
                 "/following-sibling::div[contains(@class,'jmix-sidemenu-submenu-open')]";
