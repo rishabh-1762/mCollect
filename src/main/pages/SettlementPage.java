@@ -1,39 +1,27 @@
 package pages;
 
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Locator;
+import pages.settlement.RaiseSettlement;
 
 public class SettlementPage {
-
     private Page page;
-
-    private Locator raiseSettlementBtn;
-    private Locator apacInput;
-    private Locator okButton;
-    private Locator settlementHeader;
+    private RaiseSettlement raiseSettlement;
 
     public SettlementPage(Page page) {
         this.page = page;
-
-        raiseSettlementBtn = page.locator("//span[text()='Raise Settlement Request']");
-        apacInput = page.locator( "//input[contains(@class,'v-textfield') and contains(@class,'v-required')]");
-        okButton = page.locator("//span[text()='Ok']");
-        settlementHeader = page.locator("//span[text()='Raise Settlement Request']");
+        this.raiseSettlement = new RaiseSettlement(page);
     }
 
     public void clickRaiseSettlement() {
-        raiseSettlementBtn.waitFor();   // auto-wait
-        raiseSettlementBtn.click();
+        raiseSettlement.clickRaiseSettlementButton();
     }
 
-    public void enterApacAndSubmit(String apac) {
-        apacInput.waitFor();
-        apacInput.fill(apac);
-        okButton.click();
+    public void enterApacAndSubmit(String APAC) {
+        raiseSettlement.enterAPACforSettlementRequest(APAC);
+        raiseSettlement.clickOkButton();
     }
 
     public boolean isRaiseSettlementPageOpened() {
-        settlementHeader.waitFor();
-        return settlementHeader.isVisible();
+        return raiseSettlement.isRaiseSettlementPageOpened();
     }
 }

@@ -9,7 +9,7 @@
         <classes>
             <!-- UPDATE with YOUR test class full path -->
             <!--<class name="tests.LoginTest"/> -->
-            <class name="tests.AllocationText"/>
+            <class name="Settlement.navigateToRasieSettlementTest"/>
             <!-- Add more test classes here -->
         </classes>
     </test>
